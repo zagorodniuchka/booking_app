@@ -66,7 +66,28 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      body: Center(),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/images/Background.png'),
+              fit: BoxFit.cover)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(16),
+                width: MediaQuery.of(context).size.width,
+                child: ElevatedButton.icon(
+                  icon: Icon(Icons.phone, color: Colors.yellow[50]),
+                  label: Text('LOGIN WITH PHONE', style: TextStyle(color: Colors.yellow[50])),
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(Colors.brown)
+                  ), onPressed: () {  },
+                ),
+              )
+            ],
+        ),
+      ),
     );
   }
 }
